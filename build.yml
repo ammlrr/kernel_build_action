@@ -1,4 +1,3 @@
-# A simple action usage
 name: Build Kernel
 on:
   workflow_dispatch:
@@ -11,20 +10,19 @@ jobs:
     permissions:
       contents: read
 
-    steps:
-      - name: Build Kernel
-        uses: dabao1955/kernel_build_action@main
-        with:
-          kernel-url: https://github.com/AcmeUI-Devices/android_kernel_xiaomi_cas
-          kernel-dir: msm-4.19
-          kernel-branch: taffy
-          config: cas_defconfig
-          arch: arm64
-          aosp-gcc: true
-          aosp-clang: true
-          ksu: true
-          ksu-version: main
-          android-version: 12
-          aosp-clang-version: r383902
-          disable-lto: true
+    steps:  
+      - name: Build Kernel  
+        uses: dabao1955/kernel_build_action@main  
+        with:  
+          kernel-url: https://github.com/hypeartist/android-kernel-xiaomi-vili  
+          kernel-branch: main  
+          config: vili_defconfig  
+          arch: arm64  
+          aosp-gcc: true  
+          aosp-clang: true  
+          ksu: true  
+          ksu-version: main  
+          android-version: 14  
+          aosp-clang-version: r487747  
+          disable-lto: true  
           anykernel3: true
